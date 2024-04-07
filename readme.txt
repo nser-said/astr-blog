@@ -32,7 +32,7 @@ enhancing the overall user experience.
 
 == Useful Links ==
 
-- [Theme Code](https://github.com/nser-said?tab=repositories)
+- [Theme Code](https://github.com/nser-said/astr-blog)
 
 
 == Changelog ==
