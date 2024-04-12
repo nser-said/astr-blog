@@ -4,11 +4,13 @@
  * Description:       This WordPress  free blog  template, built on Bootstrap 4, features a sleek left sidebar and offers extensive customization options through the use of CSS variables (custom properties).The template is designed to be fully responsive, ensuring a seamless user experience across various devices. With its modern and stylish design, this template is an ideal choice for bloggers looking to create an engaging and visually appealing online presence.  Additionally, it includes features that make it easy to navigate and interact with the content, enhancing the overall user experience.
  * Version:           1.0.0
  * Author:            Naser said
+ * Text Domain: astr-blog
  * Author URI:        https://github.com/nser-said?tab=repositories
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * License:           GNU General Public License v2.0 or later
+ * License:           GPLv2 
  * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
- * Text Domain: astr-blog
  *Tags: custom-menu, custom-logo, entertainment, one-column, two-columns, left-sidebar, e-commerce, right-sidebar, custom-colors, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready, blog
+ REQUIRED Tested up to: 5.0
+
  */

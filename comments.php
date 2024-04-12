@@ -52,6 +52,7 @@
         );
     }
     ?>
+    <?php paginate_comments_links(); ?>
 </div>
 
 

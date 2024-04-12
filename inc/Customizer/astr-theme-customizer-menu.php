@@ -2,6 +2,18 @@
 
 
 function Nea_custom_Menu_customize_register($wp_customize) {
+
+
+    function sanitize_custom_font_size_Menu($input) {
+        // يمكنك إجراء التحققات اللازمة هنا
+        // على سبيل المثال، يمكنك التحقق من أن القيمة هي رقم صحيح إيجابي
+        if (is_numeric($input) && $input > 0) {
+            return $input;
+        } else {
+            return '';
+        }
+    };
+
     // Add a new panel for general customization.
     $wp_customize->add_panel('custom_panel', array(
         'title' => 'Typography',
@@ -11,6 +23,7 @@ function Nea_custom_Menu_customize_register($wp_customize) {
     $wp_customize->add_setting('custom_font_Menu', array(
         'default'   => '',
         'type'=>'theme_mod',
+        'sanitize_callback' => 'sanitize_custom_font_size_Menu',
     ));
     $wp_customize->add_control('custom_font_Menu', array(
         'label'     => 'font-family',
@@ -39,7 +52,7 @@ function Nea_custom_Menu_customize_register($wp_customize) {
     $wp_customize->add_setting('custom_font_zise_Menu', array(
         'default'   => '',
         'type'=>'theme_mod',
-        
+        'sanitize_callback' => 'sanitize_custom_font_size_Menu',
     ));
     $wp_customize->add_control('custom_font_zise_Menu', array(
         'label'     => 'Font Size (px)',
@@ -58,6 +71,7 @@ function Nea_custom_Menu_customize_register($wp_customize) {
     $wp_customize->add_setting('custom_font_weight_Menu', array(
         'default'   => '',
         'type'=>'theme_mod',
+        'sanitize_callback' => 'sanitize_custom_font_size_Menu',
         
     ));
     $wp_customize->add_control('custom_font_weight_Menu', array(
@@ -76,6 +90,7 @@ function Nea_custom_Menu_customize_register($wp_customize) {
     $wp_customize->add_setting('custom_font_transform_Menu', array(
         'default'   => '',
         'type'=>'theme_mod',
+        'sanitize_callback' => 'sanitize_custom_font_size_Menu',
     ));
     $wp_customize->add_control('custom_font_transform_Heabings', array(
         'label'     => 'Text Transform',
@@ -94,6 +109,7 @@ function Nea_custom_Menu_customize_register($wp_customize) {
     $wp_customize->add_setting('custom_font_Line_Height_Menu', array(
         'default'   => '',
         'type'=>'theme_mod',
+        'sanitize_callback' => 'sanitize_custom_font_size_Menu',
     ));
     $wp_customize->add_control('custom_font_Line_Height_Menu', array(
         'label'     => 'Line-Height (1 to 3)',

@@ -7,7 +7,14 @@
  * Custom color options Added by astr
  */
  
-function Nea_astr_customizer_colors( $wp_customize ) {  
+function Nea_astr_customizer_colors( $wp_customize ) { 
+
+// تعريف وظيفة تطهير للألوان بشكل مختلف
+function sanitize_hex_colors($color) {
+  return sanitize_hex_color_no_hash($color); // افتراض أن هذه الوظيفة تقوم بإزالة علامة الهاش من اللون
+}
+
+
 // Add a new customization panel.
   $wp_customize->add_panel('custom_panel', array(
     'title' => 'Global',
@@ -16,13 +23,14 @@ function Nea_astr_customizer_colors( $wp_customize ) {
 
     $wp_customize->add_setting(
         'primary_colors',
+        
         array(
           'default' => '#6f42c1',
           'transport' => 'refresh',
           'type'=>'theme_mod',
-          'sanintize_callback'=>'sanintize_hex_color',
-        )
-      );
+          'sanintize_callback'=>'sanitize_hex_colors',
+        ) );
+
       $wp_customize->add_control(
         new WP_Customize_Color_Control(
           $wp_customize,
@@ -48,9 +56,10 @@ function Nea_astr_customizer_colors( $wp_customize ) {
         'default' => '#fff',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanintize_hex_color',
+        'sanintize_callback'=>'sanitize_hex_colors',
         
         )
+        
         );
         $wp_customize->add_control(
         new WP_Customize_Color_Control(
@@ -78,9 +87,10 @@ function Nea_astr_customizer_colors( $wp_customize ) {
         'default' => '#81d742',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanintize_hex_color',
+        'sanintize_callback'=>'sanitize_hex_colors',
         
         )
+        
         );
         $wp_customize->add_control(
         new WP_Customize_Color_Control(
@@ -100,9 +110,10 @@ function Nea_astr_customizer_colors( $wp_customize ) {
         'default' => '#81d742',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanintize_hex_color',
+        'sanintize_callback'=>'sanitize_hex_colors',
         
         )
+      
         );
         $wp_customize->add_control(
         new WP_Customize_Color_Control(
@@ -122,9 +133,10 @@ function Nea_astr_customizer_colors( $wp_customize ) {
         'default' => '#4f4f4f',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanintize_hex_color',
+        'sanintize_callback'=>'sanitize_hex_colors',
         
         )
+        
         );
         $wp_customize->add_control(
         new WP_Customize_Color_Control(

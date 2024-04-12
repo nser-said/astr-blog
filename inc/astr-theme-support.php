@@ -11,6 +11,8 @@
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
+	add_theme_support( 'wp-block-styles' );
+
 	// Let WordPress manage the document title for us
 	add_theme_support( 'title-tag' );
  

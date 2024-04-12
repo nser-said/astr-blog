@@ -64,36 +64,3 @@ function Nea_astr_widgets_init() {
 }
 add_action( 'widgets_init', 'Nea_astr_widgets_init' );
 
-
-function Nea_custom_search_form() {
-    ob_start(); ?>
-    <style>
-      
-        .custom-search-input {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            width: 200px;
-        }
-        .custom-search-submit {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-    </style>
-    <?php
-    $form = ob_get_clean();
-
-    $form .= '<form role="search" method="get" class="custom-search-form" action="' . esc_url(home_url('/')) . '">
-                <input type="search" class="custom-search-input" placeholder="' . esc_attr('Search...') . '" value="' . get_search_query() . '" name="s" />
-                <button type="submit" class="custom-search-submit">' . esc_html('Search') . '</button>
-            </form>';
-
-    return $form;
-}
-
-// Replace the default template with the custom template.
-add_filter('get_search_form', 'Nea_custom_search_form');

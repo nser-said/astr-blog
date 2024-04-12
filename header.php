@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title><?php echo get_bloginfo( 'name' ); ?></title>
+  
     <!-- Meta tags -->
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
     <meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
     <meta name="author" content="<?php echo get_bloginfo( 'author' ); ?>">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/logo.png">
+    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()) ?>/images/logo.png">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -34,6 +34,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navigation" class="collapse navbar-collapse flex-column">
+        
                 <?php
                 // Displaying the custom logo if available
                 if (function_exists('the_custom_logo')) {
@@ -66,7 +67,7 @@
 		
         <header class="page-title theme-bg-light text-center gradient py-5">
             <h1 class="heading"><?php the_title(); ?></h1>
-            <div class="search d-none d-md-block bg-black">
+            <div class="search d-none d-md-block">
                 <?php get_search_form(); ?>
             </div>
         </header>

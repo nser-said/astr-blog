@@ -18,6 +18,6 @@
   
 						 
 			
-		<?php the_posts_pagination(  ); ?>
+		<?php the_posts_pagination(); ?>
      
 	   	
