@@ -35,6 +35,8 @@
 
 <div class="container text-center">
 <?php echo Nea_astr_disply_modifcation()['text_footer']; ?>
+
+
 </div>
 
 

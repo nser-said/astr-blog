@@ -229,6 +229,10 @@ footer {
  background-color: $footer_color;
 }
 
+footer p {
+  background-color: $footer_color;
+ }
+
 </style>
 START;
  };

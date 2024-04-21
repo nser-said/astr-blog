@@ -9,6 +9,7 @@
 <?php get_header(); ?>
 
 <article class="content px-3 py-5 p ">
+<div id="post-<?php the_ID(); ?>" class="<?php echo implode( ' ', get_post_class() ); ?>">
 <?php
 //Checking if there is an article to display
     if (have_posts()) {
@@ -20,6 +21,7 @@
         }
     }
     ?>
+    <?php wp_link_pages(); ?>
 </article>
 
 <?php get_footer(); ?>
