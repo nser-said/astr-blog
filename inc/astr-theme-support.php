@@ -12,6 +12,7 @@
 	add_theme_support( 'automatic-feed-links' );
 
 	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'align-wide' );
 
 	// Let WordPress manage the document title for us
 	add_theme_support( 'title-tag' );

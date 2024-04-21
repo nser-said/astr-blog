@@ -4,16 +4,25 @@
  */
     // Adding options to fonts.
     function Nea_custom_fonts_customize_register($wp_customize) {
-        
-    function sanitize_custom_font_size_fonts($input) {
-        // يمكنك إجراء التحققات اللازمة هنا
-        // على سبيل المثال، يمكنك التحقق من أن القيمة هي رقم صحيح إيجابي
-        if (is_numeric($input) && $input > 0) {
-            return $input;
-        } else {
-            return '';
-        }
-    };
+        function sanitize_custom_font_size_fonts($input) {
+            // يمكنك إجراء التحققات اللازمة هنا
+            // على سبيل المثال، يمكنك التحقق من أن القيمة هي رقم صحيح إيجابي
+            if (is_numeric($input) && $input > 0) {
+                return $input;
+            } else {
+                return '';
+            }
+        };
+
+        function sanitize_custom_font_size_footer_text($input) {
+            // يمكنك إجراء التحققات اللازمة هنا
+            // على سبيل المثال، يمكنك التحقق من أن القيمة تحتوي على نص ورقم مع بعض
+            if (preg_match('/^[a-zA-Z0-9]+$/', $input)) {
+                return $input;
+            } else {
+                return '';
+            }
+        };
     // Add a new panel for general customization.
         // Add a new panel for general customization.
         $wp_customize->add_panel('custom_panel', array(
@@ -50,19 +59,19 @@
   
 
 
-        $wp_customize->add_setting('custom_font_zise', array(
+        $wp_customize->add_setting('custom_font_size', array(
             'default'   => '',
             'type'=>'theme_mod',
-            'sanitize_callback' => 'sanitize_custom_font_size_fonts',
+            'sanitize_callback' => 'sanitize_custom_font_size_footer_text',
             
         ));
-        $wp_customize->add_control('custom_font_zise', array(
+        $wp_customize->add_control('custom_font_size', array(
             'label'     => 'Font Size (px)',
             'section'   => 'font_cuctom',
             'type'      => 'input',
             'input_attrs' => array(
                 'style' => 'border: 2px solid #6610f2; color: #6610f2;',
-                'placeholder' =>'Font-weight',
+                'placeholder' =>'Font-size',
                     
                   ),
                  
@@ -143,12 +152,13 @@
         );
 
 
+
        
     $wp_customize->add_setting( 'lun_bookcener_footer_text', 
     array(
         'default' => 'all copyrighs',
         'type'=>'theme_mod',
-        'sanitize_callback' => 'sanitize_custom_font_size_fonts',
+        'sanitize_callback' => 'sanitize_custom_font_size_footer_text',
     ) 
     );
     $wp_customize->add_control( 'lun_bookcener_footer_text',

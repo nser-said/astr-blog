@@ -44,10 +44,7 @@
     
 }
 
-body p {
-    font-size:xx-small;
 
-}
 
 html {
     line-height: 1.15;
@@ -86,6 +83,7 @@ h6 {
 .btn:focus,
 .btn.focus {
     box-shadow: none !important
+    
 }
 
 .btn-primary {
@@ -814,6 +812,45 @@ div.comment:first-of-type {
     font-size: 30px;
     
 }
+.wp-caption {
+    /* أضف أنماط CSS المطلوبة هنا */
+    /* مثال: */
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px;
+}
+.wp-caption-text {
+    /* أضف أنماط CSS المطلوبة هنا */
+    /* مثال: */
+    font-style: italic;
+    color: #555;
+}
+
+.gallery-caption {
+    /* أضف أنماط CSS المطلوبة هنا */
+    /* مثال: */
+    background-color: #f9f9f9;
+    padding: 5px;
+}
+.aligncenter {
+    /* أضف أنماط CSS المطلوبة هنا */
+    /* مثال: */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 
 /*footer*/
 .col_white_amrc { color:#FFF;}

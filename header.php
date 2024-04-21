@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
     <meta name="author" content="<?php echo get_bloginfo( 'author' ); ?>">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()) ?>/images/logo.png">
+
+    
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

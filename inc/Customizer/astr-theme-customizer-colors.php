@@ -9,9 +9,13 @@
  
 function Nea_astr_customizer_colors( $wp_customize ) { 
 
-// تعريف وظيفة تطهير للألوان بشكل مختلف
-function sanitize_hex_colors($color) {
-  return sanitize_hex_color_no_hash($color); // افتراض أن هذه الوظيفة تقوم بإزالة علامة الهاش من اللون
+// إضافة وظيفة ردمج مخصصة لتنظيف القيم المدخلة للون
+function sanitize_hex_colors($input) {
+  // إذا كانت القيمة صالحة (تمثل لوناً صالحاً بتنسيق HEX)
+ 
+    // تنقية القيمة المدخلة هنا
+    return sanitize_hex_color( $input );
+
 }
 
 
@@ -28,7 +32,7 @@ function sanitize_hex_colors($color) {
           'default' => '#6f42c1',
           'transport' => 'refresh',
           'type'=>'theme_mod',
-          'sanintize_callback'=>'sanitize_hex_colors',
+          'sanitize_callback'=>'sanitize_hex_colors',
         ) );
 
       $wp_customize->add_control(
@@ -56,7 +60,7 @@ function sanitize_hex_colors($color) {
         'default' => '#fff',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanitize_hex_colors',
+        'sanitize_callback'=>'sanitize_hex_colors',
         
         )
         
@@ -87,7 +91,7 @@ function sanitize_hex_colors($color) {
         'default' => '#81d742',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanitize_hex_colors',
+        'sanitize_callback'=>'sanitize_hex_colors',
         
         )
         
@@ -110,7 +114,7 @@ function sanitize_hex_colors($color) {
         'default' => '#81d742',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanitize_hex_colors',
+        'sanitize_callback'=>'sanitize_hex_colors',
         
         )
       
@@ -133,7 +137,7 @@ function sanitize_hex_colors($color) {
         'default' => '#4f4f4f',
         'type'=>'theme_mod',
         'transport' => 'refresh',
-        'sanintize_callback'=>'sanitize_hex_colors',
+        'sanitize_callback'=>'sanitize_hex_colors',
         
         )
         
@@ -170,8 +174,9 @@ function sanitize_hex_colors($color) {
     $font_color = get_theme_mod('font_colors','#fff' );
     $text_color = get_theme_mod('text_colors','#fff' );
     $footer_color = get_theme_mod('footer_colors','#fff' );
+
     $custom_font = get_theme_mod('custom_font');
-    $custom_font_size = get_theme_mod('custom_font_zise');
+    $custom_font_size = get_theme_mod('custom_font_size');
     $custom_font_weight = get_theme_mod('custom_font_weight');
     $custom_font_transform = get_theme_mod('custom_font_transform');
     $custom_font_Line_Height = get_theme_mod('custom_font_Line_Height');
@@ -198,7 +203,7 @@ body a{
   font-family:  $custom_font ;
 }
 body p{
-  font-size:$custom_font_size;
+  font-size:    $custom_font_size;
   font-family:   $custom_font_Menu ;
   text-transform: $custom_font_transform ;
   font-weight:  $custom_font_weight;

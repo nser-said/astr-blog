@@ -34,14 +34,29 @@ function custom_register_block_patterns() {
     register_block_pattern(
         'custom-block-pattern', // اسم النمط الخاص بك
         array(
-            'title'       => __( 'Custom Block Pattern', 'text-domain' ), // عنوان النمط
-            'description' => __( 'Description of custom block pattern', 'text-domain' ), // وصف النمط
+            'title'       => __( 'Custom Block Pattern', 'astr-blog' ), // عنوان النمط
+            'description' => __( 'Description of custom block pattern', 'astr-blog' ), // وصف النمط
             'content'     => 'Your block pattern content goes here', // محتوى النمط
             'categories'  => array( 'text' ), // الفئة التي ينتمي إليها النمط
         )
     );
 }
 add_action( 'init', 'custom_register_block_patterns' );
+
+function custom_editor_styles() {
+    add_editor_style( 'editor-styles.css' ); // استبدل editor-styles.css بمسار الملف CSS الخاص بك
+}
+add_action( 'after_setup_theme', 'custom_editor_styles' );
+
+
+// تحقق من عرض الردود على التعليقات في صفحات المحتوى المفردة
+function enqueue_comment_reply_script() {
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply_script' );
+
 
 
 
