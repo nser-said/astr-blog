@@ -57,7 +57,7 @@ function enqueue_comment_reply_script() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply_script' );
 
-
+load_theme_textdomain( 'astr-blog', get_template_directory() . '/languages' );
 
 
 
