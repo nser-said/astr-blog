@@ -34,8 +34,8 @@ function custom_register_block_patterns() {
     register_block_pattern(
         'custom-block-pattern', // اسم النمط الخاص بك
         array(
-            'title'       => __( 'Custom Block Pattern', 'astr-blog' ), // عنوان النمط
-            'description' => __( 'Description of custom block pattern', 'astr-blog' ), // وصف النمط
+            'title'       => 'Custom Block Pattern', 'astr-blog' , // عنوان النمط
+            'description' =>  'Description of custom block pattern', // وصف النمط
             'content'     => 'Your block pattern content goes here', // محتوى النمط
             'categories'  => array( 'text' ), // الفئة التي ينتمي إليها النمط
         )
@@ -58,6 +58,7 @@ function enqueue_comment_reply_script() {
 add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply_script' );
 
 load_theme_textdomain( 'astr-blog', get_template_directory() . '/languages' );
+
 
 
 
